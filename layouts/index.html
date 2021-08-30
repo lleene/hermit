@@ -18,15 +18,10 @@
 			{{- with .Site.Params.homeSubtitle }}
 			<p id="home-subtitle">{{.}}</p>
 			{{- end }}
-			{{- with .Site.Params.social }}
-			<div id="home-social">
-				{{ partialCached "social-icons.html" . }}
-			</div>
-			{{- end }}
 			<nav id="home-nav" class="site-nav">
 				{{ partialCached "menu.html" . }}
 			</nav>
-		</div>
+		</div> 
 		<div id="home-footer">
 			<p>
 				&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>{{ .Site.Params.footerCopyright | safeHTML }}
