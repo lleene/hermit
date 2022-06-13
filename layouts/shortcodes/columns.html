@@ -1,0 +1,14 @@
+<div class="flex flex-wrap">
+  <div style="width:10em; padding: 1em;">
+    <img src="{{ .Get "src" }}"
+         {{- if or (.Get "alt") (.Get "caption") }}
+         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
+         {{- end -}}
+         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+         {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+    />
+  </div>
+  <div class="flex-even markdown-inner">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
