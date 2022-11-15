@@ -1,0 +1,9 @@
+<div class="code-copy-content">
+		{{ $inner := trim .Inner "\n" | safeHTML }}
+		{{ highlight $inner "python" "" }}
+</div>
+{{ $id := delimit (shuffle (seq 1 9)) "" }}
+<div id="code"></div>
+<py-script output="code">
+  {{.Inner}}
+</py-script>

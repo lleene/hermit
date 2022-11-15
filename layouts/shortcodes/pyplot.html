@@ -1,0 +1,12 @@
+<div class="code-copy-content">
+		{{ $inner := trim .Inner "\n" | safeHTML }}
+		{{ highlight $inner "python" "" }}
+</div>
+{{ $id := delimit (shuffle (seq 1 9)) "" }}
+<div id="plot"></div>
+<py-config type="toml">
+  packages = ["numpy", "matplotlib"]
+</py-config>
+<py-script output="plot">
+  {{.Inner}}
+</py-script>
