@@ -45,6 +45,7 @@
 	{{- if templates.Exists "partials/extra-foot.html" -}}
 	{{ partial "extra-foot.html" . }}
 	{{- end }}
+	{{- partial "mermaid.html" . -}}
 </body>
 
 </html>
